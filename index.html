@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- FORCE CACHE CLEAR -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
+<meta name="version" content="v5">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Bhavya ❤️</title>
 
@@ -107,7 +111,7 @@ button:hover{
 
 <h1>Happy Birthday My Love ❤️</h1>
 
-<img src="photo.jpg">
+<img src="photo.jpg?v=5">
 
 <div class="typing" id="text"></div>
 
@@ -128,10 +132,22 @@ button:hover{
     </div>
 </div>
 
-<audio id="bgMusic" src="song.mp3"></audio>
+<audio id="bgMusic" src="song.mp3?v=5"></audio>
 
 <script>
 
+/* ===== VERSION FORCE RELOAD ===== */
+(function () {
+    const version = "v5";
+    const storedVersion = localStorage.getItem("site_version");
+
+    if (storedVersion !== version) {
+        localStorage.setItem("site_version", version);
+        location.reload(true);
+    }
+})();
+
+/* ===== TYPING TEXT ===== */
 const message = `May every wish you make today come true. You deserve the world, and I'll always be there to remind you of that.
 
 Let's always stay like this... together, forever.
@@ -162,6 +178,7 @@ function typeWriter(){
 }
 typeWriter();
 
+/* ===== GIFT OPEN ===== */
 function openGift(){
     document.getElementById("cardSection").style.display="block";
     document.getElementById("bgMusic").play();
