@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bhavya ❤️</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family: 'Segoe UI', sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+    color:white;
+}
+
+.container{
+    padding:30px 15px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1{
+    font-size:32px;
+    margin-top:20px;
+    animation: slideDown 2s ease;
+}
+
+p{
+    font-size:18px;
+    margin:15px 0;
+    line-height:1.6;
+}
+
+img{
+    width:220px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 0 20px rgba(255,255,255,0.7);
+    animation: glow 2s infinite alternate;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    background:#ff4d6d;
+    border:none;
+    border-radius:30px;
+    color:white;
+    cursor:pointer;
+    margin-top:20px;
+    box-shadow:0 0 15px rgba(255,255,255,0.6);
+}
+
+button:hover{
+    background:#ff1e4d;
+}
+
+@keyframes glow{
+    from{ box-shadow:0 0 10px white;}
+    to{ box-shadow:0 0 25px white;}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideDown{
+    from{transform:translateY(-50px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Birthday My Love ❤️</h1>
+
+    <img src="photo.jpg" alt="Our Photo">
+
+    <p>
+        Aaj sirf aapka birthday nahi hai…  
+        Aaj Mahashivratri bhi hai 🌙🕉️  
+        Toh aaj ke din aap meri Parvati…  
+        Aur main aapka Shiv ❤️
+    </p>
+
+    <p>
+        Parvati maa ke liye Shiv ne intezaar kiya tha…  
+        Main bhi aapka hamesha intezaar karunga 🤍  
+        Ek achha insaan ban kar…  
+        Sirf aapse pyaar maangne aunga 💖
+    </p>
+
+    <p>
+        From Dudu 💌  
+        I Love You So Much ❤️✨
+    </p>
+
+    <button onclick="playMusic()">Click Here Baby 💕</button>
+</div>
+
+<audio id="bgMusic" src="song.mp3"></audio>
+
+<script>
+// Force refresh for GitHub preview
+if (performance.navigation.type === 1) {
+    location.reload(true);
+}
+
+// Music play function
+function playMusic(){
+    document.getElementById("bgMusic").play();
+    alert("Once Again Happy Birthday My Parvati ❤️ From Dudu");
+}
+</script>
+
+</body>
+</html>
