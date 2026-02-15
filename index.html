@@ -12,37 +12,40 @@
 body{
     margin:0;
     padding:0;
-    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
     font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#1e1e2f,#ff4d6d);
+    color:white;
     text-align:center;
     overflow-x:hidden;
-    color:white;
 }
 
 .container{
-    padding:30px 15px;
-}
-
-h1{
-    margin-top:20px;
+    padding:30px 20px;
 }
 
 img{
-    width:220px;
+    width:230px;
     border-radius:20px;
-    margin-top:20px;
-    box-shadow:0 0 20px rgba(255,255,255,0.7);
+    margin:20px 0;
+    box-shadow:0 0 25px rgba(255,255,255,0.6);
+}
+
+.typing{
+    font-size:18px;
+    line-height:1.6;
+    white-space:pre-line;
+    min-height:180px;
 }
 
 button{
-    padding:14px 28px;
+    margin-top:20px;
+    padding:14px 30px;
     font-size:18px;
-    background:#ff004c;
     border:none;
     border-radius:40px;
+    background:#ff004c;
     color:white;
     cursor:pointer;
-    margin-top:25px;
     box-shadow:0 0 20px rgba(255,255,255,0.7);
     transition:0.3s;
 }
@@ -54,15 +57,15 @@ button:hover{
 /* Gift Card */
 
 .card-wrapper{
-    perspective:1000px;
-    width:300px;
-    margin:40px auto;
     display:none;
+    margin-top:40px;
+    perspective:1000px;
 }
 
 .card{
-    width:100%;
+    width:320px;
     height:200px;
+    margin:auto;
     position:relative;
     transform-style:preserve-3d;
     transition:1s;
@@ -76,13 +79,13 @@ button:hover{
     position:absolute;
     width:100%;
     height:100%;
-    backface-visibility:hidden;
     border-radius:20px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:20px;
+    backface-visibility:hidden;
     padding:20px;
+    font-size:18px;
 }
 
 .card-front{
@@ -90,7 +93,7 @@ button:hover{
 }
 
 .card-back{
-    background:#ffffff;
+    background:white;
     color:#ff004c;
     transform:rotateY(180deg);
     font-weight:bold;
@@ -102,34 +105,20 @@ button:hover{
 
 <div class="container">
 
-    <h1>Happy Birthday My Love ❤️</h1>
+<h1>Happy Birthday My Love ❤️</h1>
 
-    <img src="photo.jpg">
+<img src="photo.jpg">
 
-    <p>
-        Aaj sirf aapka birthday nahi hai...  
-        Aaj Mahashivratri bhi hai 🌙🕉️  
-        Toh aaj ke din aap meri Parvati...  
-        Aur main aapka Shiv ❤️
-    </p>
+<div class="typing" id="text"></div>
 
-    <p>
-        Parvati maa ke liye Shiv ne intezaar kiya tha...  
-        Main bhi aapka hamesha intezaar karunga 🤍  
-        Ek achha insaan ban kar...  
-        Sirf aapse pyaar maangne aunga 💖
-    </p>
-
-    <p>From Dudu 💌 | I Love You So Much ❤️✨</p>
-
-    <button onclick="openGift()">Click To Open The Gift Card 🎁</button>
+<button onclick="openGift()">Click To Open The Gift Card 🎁</button>
 
 </div>
 
 <div class="card-wrapper" id="cardSection">
     <div class="card" id="giftCard">
         <div class="card-front">
-            🎁 Tap To Reveal Surprise 🎁
+            Tap To Reveal Surprise 🎁
         </div>
         <div class="card-back">
             Once Again Happy Birthday My Parvati ❤️  
@@ -142,6 +131,37 @@ button:hover{
 <audio id="bgMusic" src="song.mp3"></audio>
 
 <script>
+
+const message = `May every wish you make today come true. You deserve the world, and I'll always be there to remind you of that.
+
+Let's always stay like this... together, forever.
+
+Just wanted to remind you -- you're my fav person. My days are better, smiles are wider and life is sweeter because of you.
+
+I HOPE YOUR BDAY IS FULL OF LOVE, magic and everything that makes you smile.
+
+Aaj sirf aapka birthday nahi hai...
+Aaj Mahashivratri bhi hai 🌙🕉️
+Toh aaj ke din aap meri Parvati...
+Aur main aapka Shiv ❤️
+
+Parvati maa ke liye Shiv ne intezaar kiya tha...
+Main bhi aapka hamesha intezaar karunga 🤍
+Ek achha insaan ban kar...
+Sirf aapse pyaar maangne aunga 💖
+
+From Dudu ❤️`;
+
+let i = 0;
+function typeWriter(){
+    if(i < message.length){
+        document.getElementById("text").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 35);
+    }
+}
+typeWriter();
+
 function openGift(){
     document.getElementById("cardSection").style.display="block";
     document.getElementById("bgMusic").play();
@@ -150,6 +170,7 @@ function openGift(){
 document.getElementById("giftCard").addEventListener("click",function(){
     this.classList.toggle("flip");
 });
+
 </script>
 
 </body>
